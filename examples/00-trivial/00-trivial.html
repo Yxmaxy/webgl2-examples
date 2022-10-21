@@ -13,9 +13,28 @@
     <script>
         const canvas = document.querySelector('canvas');
         const gl = canvas.getContext('webgl2');
+        
+        let green = 0;
 
-        gl.clearColor(0.3, 0.4, 0.9, 1.0);
-        gl.clear(gl.COLOR_BUFFER_BIT);
+        function update() {  // logika igre
+            const time = performance.now() / 1000;  // .now() vrne cas od zadnjega page refresha v ms
+            // green = time % 1.0;
+            green = 0.5 + 0.5 * Math.sin(time * 5);  // x5 -> petkrat hitreje
+        }
+
+        function render() {
+            gl.clearColor(0.3, green, 0.9, 1.0);  // rgba (od 0 do 1)
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+
+        function _update() {
+            update();
+            render();
+            requestAnimationFrame(_update);
+        }
+
+        requestAnimationFrame(_update);
+
     </script>
 
 </body>

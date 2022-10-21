@@ -29,4 +29,4 @@ document.querySelector('.loader-container').remove();
 const gui = new GUI();
 
 // This color picker widget modifies the variable app.color.
-gui.addColor(app, 'color');
+gui.addColor(app, 'color');  // this.color

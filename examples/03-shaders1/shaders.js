@@ -15,7 +15,8 @@ void main() {
 const fragment = `#version 300 es
 precision mediump float;
 
-in vec4 vColor;
+in vec4 vColor;  // ta se navezuje na out vec4 vColor; more biti isto ime!
+// v -> varying variable; interpoliranka
 
 out vec4 oColor;
 

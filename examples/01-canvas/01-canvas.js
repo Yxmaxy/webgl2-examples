@@ -61,6 +61,9 @@ class Application {
 
     start() {
         // initialization code (including event handler binding)
+        // loadanje tekstur, modelov itd.
+        // ta je asinhron
+        // await model itd.
     }
 
     update() {
