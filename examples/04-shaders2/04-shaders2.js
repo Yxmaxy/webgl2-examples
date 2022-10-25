@@ -22,6 +22,7 @@ class App extends Application {
 
         // Get the number of active attributes (i.e. not optimzed out by the compiler).
         const activeAttributes = gl.getProgramParameter(program, gl.ACTIVE_ATTRIBUTES);
+        // aktiven => se v kodi dejansko uporablja; za razliko od neaktivnih (unused variable)
 
         // For each active attribute get its name and location,
         // and store them in the dictionary.

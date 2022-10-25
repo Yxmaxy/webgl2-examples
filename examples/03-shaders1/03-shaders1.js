@@ -58,6 +58,10 @@ class App extends Application {
         }
 
         console.log('Compilation successful');
+
+        console.log(gl.getUniformLocation(program, 'uOffset'));  // da dobimo offset
+        console.log(gl.getAttribLocation(program, 'aPosition'));
+        console.log(gl.getAttribLocation(program, 'aColor'));
     }
 
 }
