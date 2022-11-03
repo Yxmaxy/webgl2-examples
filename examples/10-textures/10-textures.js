@@ -45,7 +45,7 @@ class App extends Application {
              1, -1, -1,  1,      0, -1,      //  10
              1,  1, -1,  1,      0,  2,      //  11
              1, -1,  1,  1,      1, -1,      //  12
-             1,  1,  1,  1,      1,  2,      //  13
+             1,  1,  1,  1,      1,  2,      //  13 (x=1, y=2 (v zgornji sliki))
         ]);
 
         const indices = new Uint16Array([
@@ -88,7 +88,7 @@ class App extends Application {
         // <canvas>, etc., so you can create a texture from such sources.
         const response = await fetch('../../common/images/crate-diffuse.png');
         const blob = await response.blob();
-        const imageBitmap = await createImageBitmap(blob);
+        const imageBitmap = await createImageBitmap(blob);  // to spremeni podatke v raw podatke
 
         // Create a texture object.
         this.texture = gl.createTexture();
@@ -111,7 +111,7 @@ class App extends Application {
 
             // Use the unsized RGBA internal format. This is
             // adequate for most needs.
-            gl.RGBA,
+            gl.RGBA,  // http://lgm.fri.uni-lj.si/ziga/texture-formats/
 
             // The "high-level" format of the texture.
             gl.RGBA,
@@ -186,7 +186,7 @@ class App extends Application {
         gl.activeTexture(gl.TEXTURE0);
 
         // Bind the correct texture to texture unit 0.
-        gl.bindTexture(gl.TEXTURE_2D, this.texture);
+        gl.bindTexture(gl.TEXTURE_2D, this.texture);  // texture_2D = pointer na aktiven texture
 
         // Set the uniform uTexture to use the texture unit 0.
         // Note that the type of the uniform is 1i (1 integer).

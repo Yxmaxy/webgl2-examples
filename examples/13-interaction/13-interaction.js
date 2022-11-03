@@ -36,10 +36,11 @@ class App extends Application {
             this.renderer.loadModel('../../common/models/floor.json'),
             this.renderer.loadTexture('../../common/images/grass.png', {
                 mip: true,
-                min: gl.NEAREST_MIPMAP_NEAREST,
+                min: gl.NEAREST_MIPMAP_NEAREST,  // NEAREST_MIPMAP_LINEAR -> da je interpoliran
                 mag: gl.NEAREST,
             }),
         ]);
+        // lahko se uporabi tudi anizotropno filtriranje, da ni zamegljeno prevec to, kar je dalec
 
         this.floor.model = model;
         this.floor.texture = texture;
