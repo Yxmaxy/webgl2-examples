@@ -23,7 +23,7 @@ class App extends Application {
              0.5, -0.5,
              0.0,  0.5,
         ]), gl.STATIC_DRAW);
-        gl.enableVertexAttribArray(0);
+        gl.enableVertexAttribArray(0);  // 0 -> oznaka v shaderju
         gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
         // Create a square mesh. It contains positions and texture coordinates.
