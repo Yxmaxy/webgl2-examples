@@ -125,7 +125,7 @@ export class Renderer {
         }
 
         // this is an application-scoped convention, matching the shader
-        const attributeNameToIndexMap = {
+        const attributeNameToIndexMap = {  // samo to je treba definirat rocno, ostalo pride iz datoteke
             POSITION   : 0,
             NORMAL     : 1,
             TANGENT    : 2,
